@@ -7,11 +7,11 @@ class PublishTest < MiniTest::Unit::TestCase
   def setup
 
     @sse_client=Sse::Client::Client.new
-    @redis_client=Redis.new
     @ns="test_sse_celient"
+    @redis_client=Redis.new
     @limit=10
     @sse_client.configure do |config|
-      config.redis_client=@redis_client
+      config.redis_options={}
       config.sse_namespace=@ns
       config.max_queue_size=@limit
     end

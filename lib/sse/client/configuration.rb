@@ -1,4 +1,6 @@
 require 'connection_pool'
+require 'redis'
+
 module Sse
   module Client
     class Client
